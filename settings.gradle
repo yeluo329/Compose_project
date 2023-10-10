@@ -16,8 +16,8 @@ dependencyResolutionManagement {
 rootProject.name = "Compose_project"
 include ':app'
 include ':appbase'
-include ':ui'
 include ':module_project'
 include ':module_square'
 include ':export_square'
+include ':module_login'
 

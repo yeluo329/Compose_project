@@ -75,18 +75,9 @@ dependencies {
     api Libs.compose_webview
     api Libs.coil
     api Libs.compose_constraintLayout
-    api project(':ui')
-
-//    api 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
-//    ksp 'com.google.dagger:hilt-android-compiler:2.28-alpha'
-
     api 'io.github.raamcosta.compose-destinations:core:1.8.42-beta'
     ksp 'io.github.raamcosta.compose-destinations:ksp:1.8.42-beta'
-
-//    implementation "com.google.dagger:hilt-android:2.46.1"
-//    ksp "com.google.dagger:hilt-android-compiler:2.46.1"
-
-//    api "androidx.hilt:hilt-navigation-compose:1.0.0"
-
-
+    api Libs.hilt_android
+    ksp Libs.hilt_compiler
+    api Libs.hilt_navigationCompose
 }

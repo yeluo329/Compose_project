@@ -1,18 +1,13 @@
 package com.example.compose_project.navhost
 
 import androidx.compose.runtime.Composable
-
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navigation
-import com.example.appbase.navhost.LoginScreen
-
 import com.example.compose_project.Home.tabone.TabOneScreen
 import com.example.compose_project.NavGraphs
 import com.example.compose_project.definable.Def
-
-
 import com.example.compose_project.destinations.TabOneScreenDestination
 import com.example.compose_project.destinations.WeatherScreenDestination
 import com.example.compose_project.welcome.WeatherScreen
