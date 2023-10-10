@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.devtools.ksp'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -49,5 +51,10 @@ dependencies {
     implementation project(':appbase')
 
     ksp 'io.github.raamcosta.compose-destinations:ksp:1.8.42-beta'
-    ksp Libs.hilt_compiler
+
+    api Libs.dagger_hilt_android
+    api Libs.hilt_navigationCompose
+//    api Libs.hilt_viewModel
+//    kapt Libs.hilt_compiler
+    kapt Libs.dagger_hilt_compiler
 }

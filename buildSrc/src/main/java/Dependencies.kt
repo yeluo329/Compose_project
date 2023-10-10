@@ -37,7 +37,7 @@ object Versions {
 
     const val compose_constraintlayout_version = "1.0.1"
 
-    const val hilt = "2.40.5"
+    const val hilt = "2.44"
 }
 
 object Libs {
@@ -86,9 +86,11 @@ object Libs {
 
 
     //hilt
-    const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt}"
-    const val hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    const val dagger_hilt_android = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val dagger_hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
     const val hilt_navigationCompose = "androidx.hilt:hilt-navigation-compose:1.0.0"
+//    const val hilt_viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+//    const val hilt_compiler = "androidx.hilt:hilt-compiler:1.0.0"
 
 
 }

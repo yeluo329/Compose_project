@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.devtools.ksp'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -57,5 +59,12 @@ dependencies {
     implementation project(':appbase')
     implementation project(':module_square')
     implementation project(':module_project')
+    implementation project(':module_login')
+
+    api Libs.dagger_hilt_android
+    api Libs.hilt_navigationCompose
+//    api Libs.hilt_viewModel
+//    kapt Libs.hilt_compiler
+    kapt Libs.dagger_hilt_compiler
 
 }

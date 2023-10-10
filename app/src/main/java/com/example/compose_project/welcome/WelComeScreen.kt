@@ -15,12 +15,12 @@ import com.example.appbase.check.navigateWithCall
 
 import com.example.appbase.navhost.QueryToImageShape
 import com.example.compose_project.destinations.WeatherScreenDestination
-import com.example.module_square.destinations.SquareScreenDestination
 
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.result.ResultBackNavigator
+import com.example.module_login.destinations.LoginScreenDestination
 
 //开始界面
 @RootNavGraph(start = true)
@@ -45,7 +45,7 @@ fun WeatherScreen(
         )
         Button(onClick = {
             //进入登录界面,并且弹出自己
-            navigator.navigateWithCall(SquareScreenDestination, builder = {
+            navigator.navigateWithCall(LoginScreenDestination, builder = {
                 popUpTo(WeatherScreenDestination.route) { inclusive = true }
             })
         }, modifier = Modifier.constrainAs(btn) {

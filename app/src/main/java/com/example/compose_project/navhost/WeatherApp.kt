@@ -55,7 +55,7 @@ fun WeatherApp() {
         val rememberSystemUiController = rememberSystemUiController()
         SideEffect {
             rememberSystemUiController.setSystemBarsColor(
-                color = Color.White
+                color = Color(0xFFBB86FC)
             )
         }
         Surface(
@@ -65,8 +65,6 @@ fun WeatherApp() {
             val navController = rememberNavController()
             AppNavigation(navController)
         }
-
-
     }
 //    val navController = rememberNavController()
 //    NavHost(
@@ -147,71 +145,11 @@ fun ShopScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-
         Text(text = "欢迎来到商城")
 
 
     }
 }
-
-@Composable
-fun LoginScreen() {
-    Column(verticalArrangement = Arrangement.Center) {
-        Box(contentAlignment = Alignment.Center) {
-            //背景
-            Image(
-                painter = painterResource(id = R.mipmap.beautiful_girl),
-                contentScale = ContentScale.FillHeight,
-                contentDescription = null,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(240.dp)
-                    .clip(QueryToImageShape(120f))
-            )
-        }
-
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 30.dp)
-        ) {
-            Button(onClick = {
-
-            }) {
-                Text("登录")
-            }
-            Spacer(modifier = Modifier.width(10.dp))
-            Button(onClick = { }) {
-                Text(text = "注册")
-            }
-        }
-
-    }
-}
-
-
-//@Destination
-//@Composable
-//fun WelcomeScreen(navController: DestinationsNavigator) {
-//    Column(
-//        modifier = Modifier
-//            .fillMaxWidth()
-//            .fillMaxHeight(),
-//        verticalArrangement = Arrangement.Center,
-//        horizontalAlignment = Alignment.CenterHorizontally
-//    ) {
-//        Text(text = "欢迎进入天气之子APP", fontSize = 20.sp)
-//        Spacer(modifier = Modifier.height(10.dp))
-//        Button(onClick = {
-//            navController.navigate("Login") {
-//                popUpTo("Welcome") { inclusive = true }
-//            }
-//        }) {
-//            Text(text = "Go to Login")
-//        }
-//    }
-//}
 
 @Stable
 class QueryToImageShape(var hudu: Float = 100f) : Shape {
