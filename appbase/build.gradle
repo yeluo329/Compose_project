@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+}
+
+android {
+    namespace 'com.example.appbase'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.3'
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/gradle/incremental.annotation.processors"
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    api Libs.retofit
+    api Libs.converter_gson
+    api Libs.logging_interceptor
+    api Libs.coroutines
+    api Libs.coroutines_android
+    api Libs.systemuicontroller
+    api Libs.composeUi
+    api Libs.material
+    api Libs.uitooling
+    api Libs.lifecyclektx
+    api Libs.compose_activity
+    api Libs.compose_navigation
+    api Libs.compose_viewmodel
+    api Libs.livedata_ktx
+    api Libs.compose_livedata
+    api Libs.viewmodel_ktx
+    api Libs.compose_webview
+    api Libs.coil
+    api Libs.compose_constraintLayout
+    api project(':ui')
+
+//    api 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
+//    ksp 'com.google.dagger:hilt-android-compiler:2.28-alpha'
+
+    api 'io.github.raamcosta.compose-destinations:core:1.8.42-beta'
+    ksp 'io.github.raamcosta.compose-destinations:ksp:1.8.42-beta'
+
+//    implementation "com.google.dagger:hilt-android:2.46.1"
+//    ksp "com.google.dagger:hilt-android-compiler:2.46.1"
+
+//    api "androidx.hilt:hilt-navigation-compose:1.0.0"
+
+
+}
