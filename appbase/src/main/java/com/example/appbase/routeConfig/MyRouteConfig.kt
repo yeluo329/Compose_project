@@ -5,7 +5,7 @@ object MyRouteConfig {
     /**
      * 跟路由
      */
-    const val ROOT = "MY"
+    const val ROOT = "HOME"
 
     /**
      *  主界面
@@ -14,9 +14,9 @@ object MyRouteConfig {
     const val MAIN_PAGE = "${ROOT}/MainPage"
 
     /**
-     * 我的博客
+     * 我的
      */
-    const val BLOG = "${ROOT}/blog"
+    const val PROFILE= "${ROOT}/PROFILE"
 
 
 }

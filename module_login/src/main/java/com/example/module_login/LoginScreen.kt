@@ -220,7 +220,8 @@ fun LoginScreen(
                     .background(color = Color(0xFFE5E5E5), shape = RoundedCornerShape(10.dp))
                     .clickable {
                         keyboardController?.hide()
-                        viewModel.dispatch(LoginViewAction.Login)
+//                        viewModel.dispatch(LoginViewAction.Login)
+                        navController.navigate(SquareRouteConfig.MAIN_PAGE)
                     }
             ) {
                 Text(

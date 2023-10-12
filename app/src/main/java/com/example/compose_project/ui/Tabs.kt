@@ -32,7 +32,7 @@ enum class Tabs(
     /**
      * 我的
      */
-    MINE_PAGE(R.string.mine, R.mipmap.mine_dark, TAB_ID_MY)
+    MINE_PAGE(R.string.profile, R.mipmap.mine_dark, TAB_ID_MY)
 
 }
 

@@ -3,6 +3,9 @@ package com.example.compose_project
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import dagger.hilt.android.HiltAndroidApp
 
 /**
@@ -22,6 +25,7 @@ class MyApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         CONTEXT = this
 
     }

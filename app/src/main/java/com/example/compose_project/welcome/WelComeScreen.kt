@@ -23,7 +23,7 @@ import com.ramcosta.composedestinations.result.ResultBackNavigator
 import com.example.module_login.destinations.LoginScreenDestination
 
 //开始界面
-@RootNavGraph(start = true)
+
 @Destination
 @Composable
 fun WeatherScreen(
