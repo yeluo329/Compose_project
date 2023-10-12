@@ -15,7 +15,7 @@ sealed class BottomNavRoute(
 ) {
     object Home : BottomNavRoute(MyRouteConfig.MAIN_PAGE, R.string.home, Icons.Default.Home)
 
-    //    object Category: BottomNavRoute(RouteName.CATEGORY, R.string.category, Icons.Default.Menu)
-//    object Collection: BottomNavRoute(RouteName.COLLECTION, R.string.collection, Icons.Default.Favorite)
+    object MENU : BottomNavRoute(MyRouteConfig.MENU, R.string.menu, Icons.Default.Menu)
+    object LIKE : BottomNavRoute(MyRouteConfig.LIKE, R.string.like, Icons.Default.Favorite)
     object Profile : BottomNavRoute(MyRouteConfig.PROFILE, R.string.profile, Icons.Default.Person)
 }

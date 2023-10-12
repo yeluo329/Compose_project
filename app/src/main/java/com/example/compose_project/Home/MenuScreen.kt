@@ -1,4 +1,4 @@
-package com.example.compose_project.Home.tabone
+package com.example.compose_project.Home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -9,22 +9,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.appbase.routeConfig.MyRouteConfig
 import com.example.module_square.destinations.SquareScreenDestination
-
 import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootNavGraph
-import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
-@RootNavGraph(start = true)
-@Destination(navGraph = MyRouteConfig.ROOT, route = MyRouteConfig.MAIN_PAGE)
+@Destination(route = MyRouteConfig.LIKE)
 @Composable
-fun HomeScreen(navigator: DestinationsNavigator) {
-
+fun MenuScreen() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
-        Text("tab one", modifier = Modifier.clickable {
-            navigator.navigate(SquareScreenDestination)
+        Text("分类敬请期待", modifier = Modifier.clickable {
         })
     }
+
 }

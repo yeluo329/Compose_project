@@ -1,6 +1,7 @@
 package com.example.compose_project.navhost
 
 import android.annotation.SuppressLint
+import android.view.Menu
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -27,11 +28,15 @@ import com.example.appbase.routeConfig.MyRouteConfig
 import com.example.appbase.theme.ThemeColor
 import com.example.appbase.utils.ToastUtil
 import com.example.compose_project.Home.BottomNavRoute
+import com.example.compose_project.Home.LikeScreen
+import com.example.compose_project.Home.MenuScreen
 import com.example.compose_project.Home.ProfileScreen
 import com.example.compose_project.Home.tabone.HomeScreen
 import com.example.compose_project.MyApp
 import com.example.compose_project.NavGraph
 import com.example.compose_project.destinations.HomeScreenDestination
+import com.example.compose_project.destinations.LikeScreenDestination
+import com.example.compose_project.destinations.MenuScreenDestination
 import com.example.compose_project.destinations.ProfileScreenDestination
 import com.example.compose_project.destinations.WeatherScreenDestination
 import com.example.compose_project.welcome.WeatherScreen
@@ -43,8 +48,6 @@ import com.example.module_square.destinations.SquareScreenDestination
 import com.ramcosta.composedestinations.scope.resultBackNavigator
 import com.ramcosta.composedestinations.utils.composable
 import com.example.module_login.destinations.LoginScreenDestination
-import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import com.ramcosta.composedestinations.navigation.navigate
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -58,9 +61,9 @@ fun AppNavigation(navController: NavHostController) {
             when (currentDestination?.route) {
                 BottomNavRoute.Home.routeName -> BottomNavBarView(navController)
                 BottomNavRoute.Profile.routeName -> BottomNavBarView(navController)
-
+                BottomNavRoute.LIKE.routeName -> BottomNavBarView(navController)
+                BottomNavRoute.MENU.routeName -> BottomNavBarView(navController)
             }
-
         },
         content = {
             NavHost(navController = navController, startDestination = MyRouteConfig.ROOT) {
@@ -94,12 +97,12 @@ fun NavGraphBuilder.addHomeGraph(navController: NavHostController) {
         HomeScreen(destinationsNavigator(navController))
     }
 
-    composable(SquareScreenDestination) {
-        SquareScreen(destinationsNavigator(navController))
+    composable(MenuScreenDestination) {
+       MenuScreen()
     }
 
-    composable(ProjectScreenDestination) {
-        ProjectScreen()
+    composable(LikeScreenDestination) {
+        LikeScreen()
     }
 
     composable(ProfileScreenDestination) {
@@ -112,7 +115,9 @@ fun NavGraphBuilder.addHomeGraph(navController: NavHostController) {
 fun BottomNavBarView(navController: NavController) {
     val bottomNavList = listOf(
         BottomNavRoute.Home,
-        BottomNavRoute.Profile
+        BottomNavRoute.MENU,
+        BottomNavRoute.LIKE,
+        BottomNavRoute.Profile,
     )
     BottomNavigation {
         val navBackStackEntry by navController.currentBackStackEntryAsState()

@@ -11,12 +11,17 @@ object MyRouteConfig {
      *  主界面
      */
 
-    const val MAIN_PAGE = "${ROOT}/MainPage"
+    const val MAIN_PAGE = "${ROOT}/MAINPAGE"
 
     /**
      * 我的
      */
-    const val PROFILE= "${ROOT}/PROFILE"
+    const val PROFILE = "${ROOT}/PROFILE"
+
+
+    const val MENU = "${ROOT}/MENU"
+
+    const val LIKE = "${ROOT}/LIKE"
 
 
 }
